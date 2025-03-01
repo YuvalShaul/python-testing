@@ -75,3 +75,12 @@ class TestCalculatorIntegration:
             
         # Try to divide by the result of (5 - 5), which is zero
         with pytest.raises(ZeroDivisionError):
+            calculator.divide(10, calculator.subtract(5, 5))
+            
+        # Try to raise a negative number to a fractional power
+        with pytest.raises(ValueError):
+            calculator.power(calculator.subtract(0, 5), 0.5)
+            
+        # Try with non-numeric inputs
+        with pytest.raises(TypeError):
+            calculator.add(calculator.add(5, 5), "string")
