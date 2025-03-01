@@ -20,8 +20,13 @@ def power(base, exponent):
     Raises:
         TypeError: If base or exponent is not a number
         ValueError: If attempting to raise a negative number to a fractional exponent
+        ZeroDivisionError: If base is zero and exponent is negative
     """
     validate_numeric(base, exponent)
+    
+    # Handle special case: zero base with negative exponent
+    if base == 0 and exponent < 0:
+        raise ZeroDivisionError("Cannot raise zero to a negative power")
     
     # Handle special case: negative base with fractional exponent
     if base < 0 and not exponent.is_integer():
