@@ -23,11 +23,13 @@ class TestPower:
         assert power(-2, 3) == -8
         assert power(-3, 2) == 9
         
+    @pytest.mark.one
     def test_negative_exponent(self):
         """Test calculating powers with negative exponent."""
         assert power(2, -2) == 0.25
         assert power(10, -1) == 0.1
-        
+
+    @pytest.mark.one
     def test_fractional_exponent(self):
         """Test calculating powers with fractional exponent."""
         assert power(4, 0.5) == 2

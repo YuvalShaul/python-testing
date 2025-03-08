@@ -21,6 +21,7 @@ class TestCalculatorIntegration:
         assert callable(calculator.power)
         assert callable(calculator.square_root)
         
+    @pytest.mark.one
     def test_chained_operations(self):
         """Test functions can be chained together correctly."""
         # (5 + 3) * 2 = 16

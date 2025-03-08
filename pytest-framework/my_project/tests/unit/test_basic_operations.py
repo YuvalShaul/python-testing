@@ -19,11 +19,13 @@ class TestAdd:
         a, b = sample_numbers['floats']
         assert add(a, b) == 13.0
         
+    @pytest.mark.one
     def test_add_negatives(self, sample_numbers):
         """Test adding two negative numbers."""
         a, b = sample_numbers['negatives']
         assert add(a, b) == -12
         
+    @pytest.mark.one
     def test_add_mixed(self, sample_numbers):
         """Test adding a positive and negative number."""
         a, b = sample_numbers['mixed']
