@@ -4,6 +4,7 @@ Integration tests for the calculator package.
 
 import pytest
 import calculator
+import time
 
 
 class TestCalculatorIntegration:
@@ -22,8 +23,10 @@ class TestCalculatorIntegration:
         assert callable(calculator.square_root)
         
     @pytest.mark.one
+    @pytest.mark.slow
     def test_chained_operations(self):
         """Test functions can be chained together correctly."""
+        time.sleep(2)
         # (5 + 3) * 2 = 16
         result = calculator.multiply(calculator.add(5, 3), 2)
         assert result == 16
